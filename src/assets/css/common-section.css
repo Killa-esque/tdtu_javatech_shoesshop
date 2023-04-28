@@ -1,0 +1,9 @@
+.common__section {
+    background: linear-gradient(#212245b2, #212245b2),
+      url("https://th.bing.com/th/id/R.b9de87614bbe7d6dae3eeb41b6d83873?rik=z4iyBLcrtcwf%2fA&pid=ImgRaw&r=0");
+  
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0px;
+  }

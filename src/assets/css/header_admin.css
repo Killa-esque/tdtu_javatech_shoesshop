@@ -1,0 +1,43 @@
+.buttonBlue {
+    background-color: #1890ff;
+}
+
+.buttonGreen {
+    background-color: #52c41a;
+}
+
+.buttonRed {
+    background-color: #d9363e;
+}
+
+.buttonYellow {
+    background-color: #fadb14;
+}
+.buttonBlack {
+    background-color: #111;
+}
+
+.settings-drawer{
+    position: relative;
+}
+
+.buttonSignOut {
+    position: absolute;
+    bottom: 40px;
+}
+
+.buttonSignOut button {
+    background: transparent;
+    border: none;
+    background-color: #1890ff;
+    padding: .5rem 1rem;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+.buttonSignOut button:hover{
+    background-color: #05539c;
+    transition: background-color .5s;
+}

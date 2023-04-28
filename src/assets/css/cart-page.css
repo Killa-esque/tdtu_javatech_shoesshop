@@ -1,0 +1,56 @@
+th {
+  text-align: center;
+}
+
+.cart__img-box {
+  width: 80px;
+}
+
+.cart__img-box img {
+  width: 100%;
+}
+
+.cart__item-del i {
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.cart__page-btn .buy__btn a {
+  color: #fff;
+}
+
+.buy__btn {
+  border: none;
+  outline: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  background-color: #df2020;
+  color: #fff !important;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 40px;
+}
+
+.buy__btn a:hover {
+  color: #fff !important;
+}
+
+
+.small-desc {
+  color: #777;
+  font-size: .8rem;
+}
+
+
+.cart__subtotal {
+  color: #df2020;
+  font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 768px) {
+
+  th,
+  td {
+    font-size: 0.8rem;
+  }
+}
