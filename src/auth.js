@@ -1,3 +1,5 @@
+import { userService } from "./service/userService";
+
 export const isLoggedIn = () => {
   return localStorage.getItem('accessToken') !== null;
 };
@@ -7,6 +9,5 @@ export const login = (token) => {
 };
 
 export const logout = () => {
-  localStorage.removeItem('accessToken');
-  localStorage.removeItem('email');
+  localStorage.clear();
 };

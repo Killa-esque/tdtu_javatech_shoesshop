@@ -22,10 +22,6 @@ import { Provider } from 'react-redux';
 import Template from './templates/Template';
 import { store } from './redux/configStore';
 import Products from './pages/user/products/Products';
-import AdminTemplate from './templates/AdminTemplate';
-import PrivateRoute from './utils/PrivateRouteMiddleware';
-import PrivateRouteMiddleware from './utils/PrivateRouteMiddleware';
-import { isLoggedIn } from './auth';
 export const history = createBrowserHistory();
 
 

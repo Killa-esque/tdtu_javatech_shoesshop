@@ -19,7 +19,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { userLogin, userToken } = useSelector((state) => state.userReducer);
-  const { totalQuantity } = useSelector((state) => state.products);
+  const { totalQuantity, totalAmount, productCart } = useSelector((state) => state.products);
   const headerRef = useRef(null);
   const menuRef = useRef(null);
   const handleToggleMenu = () => menuRef.current.classList.toggle("show__menu");
@@ -61,9 +61,15 @@ const Header = () => {
   }, []);
 
 
+
   useEffect(() => {
     localStorage.setItem('totalQuantity', totalQuantity)
   }, [totalQuantity])
+
+  useEffect(() => {
+    localStorage.setItem('productCart', JSON.stringify(productCart))
+    localStorage.setItem('totalAmount', totalAmount)
+  }, [productCart, totalAmount])
 
   return (
     <>
@@ -131,7 +137,7 @@ const Header = () => {
                     </span>
                     <span style={{ fontSize: '1rem' }}>
                       <Link to='/profile' className="text-black">
-                          <h5 className="fs-6">{userLogin?.substring(0, 10) + '...'}</h5>
+                        <h5 className="fs-6">{userLogin?.substring(0, 10) + '...'}</h5>
                       </Link>
                     </span>
                   </>

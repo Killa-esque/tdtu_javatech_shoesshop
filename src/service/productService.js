@@ -1,24 +1,25 @@
+import { https_client } from "../utils/config";
 import { https } from "./configURL";
 
 
 export const productService = {
   getProductList: () => {
-    return https.get(`api/client/products`);
+    return https_client.get(`api/client/products`);
   },
   getBrandList: () => {
-    return https.get(`api/brands`);
+    return https_client.get(`/api/client/brands`);
   },
   getCategoryList: () => {
-    return https.get(`/api/categories`);
+    return https_client.get(`/api/client/categories`);
   },
   getProductById: (id) => {
-    return https.get(`/api/products/${id}`);
+    return https_client.get(`/api/client/products/${id}`);
   },
   getProductByBrands: (id) => {
-    return https.get(`/api/client/products/getByBrands?id=${id}`);
+    return https_client.get(`/api/client/products/getByBrands?id=${id}`);
   },
   getProductByCategories: (id) => {
-    return https.get(`/api/client/products/getByCategories?id=${id}`);
+    return https_client.get(`/api/client/products/getByCategories?id=${id}`);
   },
   addProduct: (id) => {
     return https.post(`api/products`);
@@ -29,4 +30,7 @@ export const productService = {
   updateProduct: (id) => {
     return https.put(`api/products/${id}`);
   },
+  checkOutOrder: (userOrder) => {
+    return https.post(`/api/checkout`, userOrder);
+  }
 };

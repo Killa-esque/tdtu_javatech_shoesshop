@@ -142,10 +142,10 @@ const Products = () => {
     getAllCategories()
   }, [])
 
-  useEffect(() => {
-    localStorage.setItem('productCart', JSON.stringify(productCart))
-    localStorage.setItem('totalAmount', totalAmount)
-  }, [productCart, totalAmount])
+  // useEffect(() => {
+  //   localStorage.setItem('productCart', JSON.stringify(productCart))
+  //   localStorage.setItem('totalAmount', totalAmount)
+  // }, [productCart, totalAmount])
 
   return (
     <Helmet title={'Shops'}>

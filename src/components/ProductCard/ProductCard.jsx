@@ -27,41 +27,7 @@ const ProductCard = ({ product }) => {
     } else {
       history.push('/login')
     }
-  } 
-
-  // const handleFave = () => {
-  //   const existingItem = userFavorite?.productsFavorite?.find(
-  //     (item) => {
-  //       return item.id === id
-  //     }
-  //   );
-  //   // console.log(existingItem)
-  //   if (existingItem) {
-  //     return (
-  //       <motion.button
-  //         whileHover={{ scale: 1.1 }}
-  //         className="position-absolute btn-like"
-  //         onClick={() => { removeFave(idProd)(idProd) }}
-  //       >
-  //         <i className='fa fa-heart fs-5' style={{ color: 'red' }}></i>
-  //       </motion.button>
-  //     )
-  //   }
-  //   return (
-  //     <motion.button
-  //       whileHover={{ scale: 1.1 }}
-  //       className="position-absolute btn-unlike"
-  //       onClick={() => { setFave(idProd)(idProd) }}
-  //     >
-  //       <i className='fa fa-heart fs-5' style={{ color: 'rgba(0, 0, 0, 0.1)' }}></i>
-  //     </motion.button>
-  //   )
-
-  // }
-
-  // useEffect(() => {
-  //   handleFave();
-  // }, [userFavorite])
+  }
 
 
   return (
@@ -73,15 +39,17 @@ const ProductCard = ({ product }) => {
       </div>
       <div className='product__content'>
         <h5>
-          {name.length > 15 ? name.substring(0, 15) + '...' : name}
+          <Link to={`/detail/${id}`}>{name?.length > 15 ? name?.substring(0, 15) + '...' : name}</Link>
         </h5>
         <div className='d-flex align-items-center justify-content-between'>
           <span className='product__price'>
             ${price}
           </span>
-          <motion.button whileTap={{ scale: 1.2 }} className='addToCart__btn' onClick={handleAddToCart}>
-            Add to Cart
-          </motion.button>
+          <Link to={`/detail/${id}`}>
+            <motion.button whileTap={{ scale: 1.2 }} className='addToCart__btn' >
+              Add to Cart
+            </motion.button>
+          </Link>
         </div>
       </div>
     </div>

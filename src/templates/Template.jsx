@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { Outlet } from 'react-router-dom'
+import { Navigate, Outlet } from 'react-router-dom'
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 import Carts from '../components/Cart/Carts'
@@ -8,16 +8,21 @@ import Carts from '../components/Cart/Carts'
 
 const Template = () => {
   const { cartIsVisible } = useSelector(state => state.cartUI)
-
-  return (
-    <>
-      <Header />
-      {/* Show Cart */}
-      {cartIsVisible && <Carts />}
-      <Outlet />
-      <Footer />
-    </>
-  )
+  const { userLogin, userToken } = useSelector(state => state.userReducer)
+  if (!userToken) {
+    return <Navigate to={'login'} />
+  }
+  else {
+    return (
+      <>
+        <Header />
+        {/* Show Cart */}
+        {cartIsVisible && <Carts />}
+        <Outlet />
+        <Footer />
+      </>
+    )
+  }
 }
 
 export default Template

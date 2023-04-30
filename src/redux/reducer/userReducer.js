@@ -4,7 +4,8 @@ import { USER_LOGIN, USER_TOKEN, getStore } from '../../utils/config';
 
 const initialState = {
   userLogin: getStore(USER_LOGIN),
-  userToken: getStore(USER_TOKEN)
+  userToken: getStore(USER_TOKEN),
+  userProfile: {}
 }
 
 const userReducer = createSlice({
@@ -15,11 +16,14 @@ const userReducer = createSlice({
     loginAction: (state, actions) => {
       state.userLogin = actions.payload.userLogin;
       state.userToken = actions.payload.userToken;
+    },
+    getProfileAction: (state, actions) => {
+      state.userProfile = actions.payload
     }
   },
 });
 
-export const { loginAction } = userReducer.actions
+export const { loginAction, getProfileAction } = userReducer.actions
 
 export default userReducer.reducer
 

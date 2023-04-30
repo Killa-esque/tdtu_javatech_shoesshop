@@ -34,6 +34,7 @@ const Login = () => {
               userToken: accessToken
             }));
             history.push("/")
+            window.location.reload()
             message.open({
               type: 'success',
               content: "Sign in successfully",

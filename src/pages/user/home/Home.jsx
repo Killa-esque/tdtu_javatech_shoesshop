@@ -16,10 +16,14 @@ import ProductCard from '../../../components/ProductCard/ProductCard';
 import Service from '../../../components/Service/Service';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllProductsAction } from '../../../redux/reducer/productReducer';
+import { isExpired } from 'react-jwt';
+import { USER_TOKEN, getStore } from '../../../utils/config';
 
 
 const Home = () => {
   const dispatch = useDispatch()
+  const isMyTokenExpired = isExpired("eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwaHV2aW5oMTEzQGdtYWlsLmNvbSIsImV4cCI6MTY4MjgzMjcwOCwiaWF0IjoxNjgyNzQ2MzA4fQ.UWq3NeRbaHjfzb-jwtup8LydXoJvH2lFF08hhWKVUoH80TIaRV2tkkHclGLCwrvyCXZEGo3IXa9gLGTXbvXpcg");
+  console.log(isMyTokenExpired)
   const [products, setProducts] = useState([]);
   const [brands, setBrands] = useState([])
   const { totalAmount, productCart } = useSelector(
@@ -67,10 +71,10 @@ const Home = () => {
     getAllBrands()
   }, [])
 
-  useEffect(() => {
-    localStorage.setItem('productCart', JSON.stringify(productCart))
-    localStorage.setItem('totalAmount', totalAmount)
-  }, [productCart, totalAmount])
+  // useEffect(() => {
+  //   localStorage.setItem('productCart', JSON.stringify(productCart))
+  //   localStorage.setItem('totalAmount', totalAmount)
+  // }, [productCart, totalAmount])
 
   return (
     <Helmet title={"Home"}>

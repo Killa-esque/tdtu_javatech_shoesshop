@@ -10,7 +10,7 @@ import { addItem, deleteItem, removeItem } from "../../redux/reducer/productRedu
 const CartItem = ({ product }) => {
   const dispatch = useDispatch()
 
-  const { id, name, price, image, quantity, totalPrice } = product;
+  const { id, name, price, image, quantity, totalPrice, size } = product;
 
   // Add items to cart
   const handleIncrementItem = () => {
@@ -18,6 +18,7 @@ const CartItem = ({ product }) => {
       addItem({
         id,
         name,
+        size,
         price,
         image,
       })
@@ -26,12 +27,12 @@ const CartItem = ({ product }) => {
 
   // handling decrease the number of products
   const handleDecreaseItem = () => {
-    dispatch(removeItem(id));
+    dispatch(removeItem({ id, size }));
   };
 
   // Delete items from cart
   const handleDeleteItem = () => {
-    dispatch(deleteItem(id));
+    dispatch(deleteItem({ id, size }));
   };
   return (
     <ListGroupItem className="border-0 cart__item">
@@ -43,6 +44,7 @@ const CartItem = ({ product }) => {
             <p className="d-flex align-items-center gap-5 cart__product-price">
               {quantity}x
               <span>${totalPrice}</span>
+              <span>Size: {size}</span>
             </p>
 
             <div className="d-flex align-items-center justify-content-between increase__decrease-btn w-100">

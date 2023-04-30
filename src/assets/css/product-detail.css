@@ -154,3 +154,8 @@
     margin-bottom: 20px;
   }
 }
+
+.size-button.active {
+  background-color: #ccc;
+  color: #000;
+}

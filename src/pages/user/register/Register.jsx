@@ -128,9 +128,9 @@ const Register = () => {
                   component="select"
                   className={`form-control form-control-lg my-2 ${errors.gender && touched.gender ? 'is-invalid' : ''}`}
                 >
-                  <option value={null}>Select gender</option>
-                  <option value={true}>Male</option>
-                  <option value={false}>Female</option>
+                  <option value={'default'}>Select gender</option>
+                  <option value={'male'}>Male</option>
+                  <option value={'female'}>Female</option>
                 </Field>
                 <ErrorMessage name="gender" component="div" className='invalid-feedback' />
 
